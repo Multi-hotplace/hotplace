@@ -37,7 +37,7 @@ public class ShopConroller {
 		log.info("searchKey:{}",searchKey);
 		log.info("searchWord:{}",searchWord);
 		
-		List<ShopVO> vos = service.searchList(searchKey,searchWord, pageNum);
+		List<ShopVO> vos = service.selectAll(pageNum);
 		long cnt = vos.stream().count();
 		
 		model.addAttribute("vos", vos);

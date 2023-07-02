@@ -9,7 +9,7 @@ public interface ShopDAO {
 
 	public int delete(ShopVO vo);
 
-	public List<ShopVO> selectAll();
+	public List<ShopVO> selectAll(int pageNum);
 
 	public ShopVO selectOne(ShopVO vo);
 

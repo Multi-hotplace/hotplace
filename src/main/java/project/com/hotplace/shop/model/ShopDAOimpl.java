@@ -40,9 +40,19 @@ public class ShopDAOimpl implements ShopDAO {
 	}
 
 	@Override
-	public List<ShopVO> selectAll() {
+	public List<ShopVO> selectAll(int pageNum) {
 		log.info("selectAll()....{}");
-		return sqlSession.selectList("SHO_SELECT_ALL");
+		
+		Map<String, Object> param = new HashMap<String, Object>();
+		
+		int itemsPerPage = 10;
+		int end = itemsPerPage * pageNum;
+		int start = (pageNum - 1) * itemsPerPage + 1;
+		
+		param.put("end", end);
+		param.put("start", start);
+		
+		return sqlSession.selectList("SHO_SELECT_ALL", param);
 	}
 
 	@Override

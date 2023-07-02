@@ -33,7 +33,7 @@ public class ShopService {
 	}
 	
 	public List<ShopVO> selectAll(int pageNum) {
-		return dao.selectAll();
+		return dao.selectAll(pageNum);
 	}
 	
 	public ShopVO selectOne(ShopVO vo) {
